@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "parents",
+  "info": {
+    "singularName": "parent",
+    "pluralName": "parents",
+    "displayName": "Parents",
+    "description": "Collection of dragon parents"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "morph": { "type": "string" },
+    "sex": { "type": "enumeration", "enum": ["Male", "Female"] },
+    "description": { "type": "richtext" },
+    "achievements": { "type": "json" },
+    "age": { "type": "string" },
+    "weight": { "type": "string" },
+    "breedingHistory": { "type": "richtext" },
+    "images": { "type": "media", "multiple": true },
+    "offspringMales": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dragon.dragon",
+      "mappedBy": "parentMale"
+    },
+    "offspringFemales": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::dragon.dragon",
+      "mappedBy": "parentFemale"
+    },
+    "publishedAt": { "type": "datetime" },
+    "createdAt": { "type": "datetime" },
+    "updatedAt": { "type": "datetime" }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dragons",
+  "info": {
+    "singularName": "dragon",
+    "pluralName": "dragons",
+    "displayName": "Dragons",
+    "description": "Collection of bearded dragons"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "morph": { "type": "string" },
+    "sex": { "type": "enumeration", "enum": ["Male", "Female"] },
+    "age": { "type": "string" },
+    "price": { "type": "decimal" },
+    "available": { "type": "boolean", "default": true },
+    "featured": { "type": "boolean", "default": false },
+    "description": { "type": "richtext" },
+    "genetics": { "type": "json" },
+    "dateAdded": { "type": "datetime" },
+    "weight": { "type": "string" },
+    "parentMale": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::parent.parent",
+      "inversedBy": "offspringMales"
+    },
+    "parentFemale": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::parent.parent",
+      "inversedBy": "offspringFemales"
+    },
+    "healthStatus": {
+      "type": "enumeration",
+      "enum": ["Excellent", "Good", "Fair"]
+    },
+    "temperament": {
+      "type": "enumeration",
+      "enum": ["Very Calm", "Calm", "Active", "Very Active"]
+    },
+    "images": { "type": "media", "multiple": true, "required": false },
+    "videos": { "type": "media", "multiple": true, "required": false },
+    "publishedAt": { "type": "datetime" },
+    "createdAt": { "type": "datetime" },
+    "updatedAt": { "type": "datetime" }
+  }
+}
