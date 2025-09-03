@@ -6,10 +6,14 @@ export default [
     name: 'strapi::cors',
     config: {
       origin: [
-        'http://localhost:5173', 'https://mixmorph-dragon-demo.vercel.app', 'https://mixmorphdragons.co.uk' // <-- replace with your frontend URL
+        'http://localhost:5173',
+        'https://mixmorph-dragon-demo.vercel.app',
+        'https://mixmorphdragons.co.uk',
+        'https://dragon-server-production-e94d.up.railway.app'
       ],
       headers: '*',  // allow all headers
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
+      keepHeadersOnError: true,
     },
   },
   'strapi::poweredBy',
