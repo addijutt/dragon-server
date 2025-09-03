@@ -9,6 +9,7 @@ export default [
         'http://localhost:5173',
         'https://mixmorph-dragon-demo.vercel.app',
         'https://mixmorphdragons.co.uk',
+        'https://www.mixmorphdragons.co.uk',
         'https://dragon-server-production-e94d.up.railway.app'
       ],
       headers: '*',  // allow all headers
